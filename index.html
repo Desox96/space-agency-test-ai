@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstraNova Space Administration</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="utility-bar">
+    <div class="utility-bar-inner">
+      <div class="utility-left">
+        <span class="utility-status">
+          <span class="status-dot"></span>
+          All Systems Nominal
+        </span>
+        <span class="utility-divider"></span>
+        <span class="utility-date" id="utilityDate"></span>
+      </div>
+      <div class="utility-right">
+        <a href="#">Internal Portal</a>
+        <a href="#">Careers</a>
+        <a href="#">Espa&ntilde;ol</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header-inner">
+      <a href="#home" class="site-logo" data-page="home">
+        <svg class="site-logo-mark" width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <rect x="1" y="1" width="34" height="34" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="2" fill="currentColor"/>
+        </svg>
+        <div class="site-logo-text">
+          <span class="site-logo-name">AstraNova</span>
+          <span class="site-logo-sub">Space Administration</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="#home" data-page="home" class="nav-link">Home</a></li>
+          <li class="nav-has-dropdown">
+            <a href="#missions" data-page="missions" class="nav-link">Missions</a>
+            <ul class="dropdown">
+              <li><a href="#missions" data-page="missions">Active Missions</a></li>
+              <li><a href="#missions" data-page="missions" class="dropdown-sub">Upcoming Launches</a></li>
+              <li><a href="#missions" data-page="missions" class="dropdown-sub">Completed Programs</a></li>
+              <li class="dropdown-divider"></li>
+              <li><a href="#missions" data-page="missions" class="dropdown-sub">Fleet Registry</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="#science" data-page="science" class="nav-link">Science</a>
+            <ul class="dropdown">
+              <li><a href="#science" data-page="science">Discoveries</a></li>
+              <li><a href="#science" data-page="science" class="dropdown-sub">Publications</a></li>
+              <li><a href="#science" data-page="science" class="dropdown-sub">Data Archive</a></li>
+              <li class="dropdown-divider"></li>
+              <li><a href="#science" data-page="science" class="dropdown-sub">Instrumentation</a></li>
+            </ul>
+          </li>
+          <li><a href="#news" data-page="news" class="nav-link">News &amp; Media</a></li>
+          <li><a href="#about" data-page="about" class="nav-link">About</a></li>
+          <li><a href="#contact" data-page="contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="12" y1="12" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-overlay-inner">
+        <button class="search-close" id="searchClose" aria-label="Close search">&times;</button>
+        <form class="search-form">
+          <input type="text" placeholder="Search missions, research, news..." autocomplete="off">
+          <button type="submit" aria-label="Submit search">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="12" y1="12" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </form>
+        <div class="search-suggestions">
+          <p class="search-suggestions-label">Popular searches</p>
+          <div class="search-tags">
+            <a href="#missions" data-page="missions">Artemis Program</a>
+            <a href="#science" data-page="science">Mars Geology</a>
+            <a href="#news" data-page="news">Launch Schedule</a>
+            <a href="#about" data-page="about">Partnerships</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE: HOME ==================== -->
+  <main class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container container--wide">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <p class="hero-eyebrow">AstraNova Space Administration &mdash; Est. 2024</p>
+            <h1 class="hero-title">Advancing human knowledge through deep space exploration</h1>
+            <p class="hero-description">
+              The AstraNova Space Administration is the civilian space agency of the United
+              Interstellar Coalition, responsible for the nation's civilian space program,
+              deep space research, and the development of sustainable space exploration infrastructure.
+            </p>
+            <div class="hero-actions">
+              <a href="#missions" data-page="missions" class="btn btn-primary">View Active Missions</a>
+              <a href="#science" data-page="science" class="btn btn-outline">Research &amp; Publications</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-image-frame">
+              <div class="hero-image-placeholder">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80" alt="Earth from orbit showing the curvature of the atmosphere against the blackness of space" loading="eager">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container container--wide">
+        <div class="hero-data-panel">
+          <div class="hero-data-row">
+            <div class="hero-data-item">
+              <span class="hero-data-label">Active Missions</span>
+              <span class="hero-data-value">4</span>
+            </div>
+            <div class="hero-data-item">
+              <span class="hero-data-label">Total Launches</span>
+              <span class="hero-data-value">147</span>
+            </div>
+            <div class="hero-data-item">
+              <span class="hero-data-label">Crew in Space</span>
+              <span class="hero-data-value">10</span>
+            </div>
+            <div class="hero-data-item">
+              <span class="hero-data-label">Participating Nations</span>
+              <span class="hero-data-value">42</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Ticker -->
+    <section class="news-bar">
+      <div class="news-bar-inner">
+        <span class="news-bar-tag">BREAKING</span>
+        <div class="news-bar-content" id="newsTicker">
+          <p>TRAPPIST-1e atmosphere shows strong water vapor and methane signatures &mdash; <a href="#science" data-page="science">Read analysis</a></p>
+        </div>
+        <span class="news-bar-time">Updated 2 hours ago</span>
+      </div>
+    </section>
+
+    <!-- Recent News -->
+    <section class="section news-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest News</h2>
+          <a href="#news" data-page="news" class="section-link">View all press releases <span>&rarr;</span></a>
+        </div>
+        <div class="news-grid">
+          <article class="news-card news-card--featured">
+            <div class="news-card-image">
+              <img src="images/mars-rover.jpg" alt="Mars rover collecting geological samples on the surface of Mars">
+            </div>
+            <div class="news-card-body">
+              <span class="news-card-category">Mars Exploration</span>
+              <span class="news-card-date">April 28, 2025</span>
+              <h3 class="news-card-title">Vanguard Rover Confirms Subsurface Ice Deposits at Jezero Crater, Opening Path for ISRU Operations</h3>
+              <p class="news-card-excerpt">In a finding that could reshape plans for future crewed Mars missions, the Vanguard lander's ground-penetrating radar has confirmed significant subsurface water ice deposits at depths accessible to current drilling technology.</p>
+              <a href="#news" data-page="news" class="news-card-link">Continue reading <span>&rarr;</span></a>
+            </div>
+          </article>
+          <div class="news-card-sidebar">
+            <article class="news-item">
+              <span class="news-item-date">April 25, 2025</span>
+              <h4 class="news-item-title"><a href="#news" data-page="news">Europa Clipper II Completes First Deep Flyby of Conamara Chaos Region</a></h4>
+            </article>
+            <article class="news-item">
+              <span class="news-item-date">April 22, 2025</span>
+              <h4 class="news-item-title"><a href="#news" data-page="news">AstraNova Signs Partnership Agreement with Three Additional Space Agencies</a></h4>
+            </article>
+            <article class="news-item">
+              <span class="news-item-date">April 18, 2025</span>
+              <h4 class="news-item-title"><a href="#news" data-page="news">Atlas Transport Vehicle Completes Successful Nuclear Thermal Propulsion Test</a></h4>
+            </article>
+            <article class="news-item">
+              <span class="news-item-date">April 14, 2025</span>
+              <h4 class="news-item-title"><a href="#news" data-page="news">New Exoplanet Detection Method Achieves 99.7% Accuracy in Radial Velocity Analysis</a></h4>
+            </article>
+            <article class="news-item">
+              <span class="news-item-date">April 10, 2025</span>
+              <h4 class="news-item-title"><a href="#news" data-page="news">Lunar Station Peregrine Reports Successful Completion of Habitat Module Expansion</a></h4>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Active Missions Overview -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Current Operations</h2>
+          <a href="#missions" data-page="missions" class="section-link">Full mission catalog <span>&rarr;</span></a>
+        </div>
+        <div class="missions-preview">
+          <div class="mission-preview-card">
+            <span class="mission-preview-id">AN-074</span>
+            <span class="mission-preview-status mission-preview-status--active">Active</span>
+            <h3>Artemis VII</h3>
+            <p class="mission-preview-desc">Lunar surface base construction and long-duration habitat testing for future Mars transit crews.</p>
+            <dl class="mission-preview-meta">
+              <div><dt>Location</dt><dd>Lunar South Pole</dd></div>
+              <div><dt>Duration</dt><dd>730 days</dd></div>
+              <div><dt>Crew</dt><dd>6 astronauts</dd></div>
+            </dl>
+          </div>
+          <div class="mission-preview-card">
+            <span class="mission-preview-id">AN-089</span>
+            <span class="mission-preview-status mission-preview-status--active">Active</span>
+            <h3>Ares Surface</h3>
+            <p class="mission-preview-desc">First human mission to Mars. Geology survey, sample collection, and ISRU prototype testing.</p>
+            <dl class="mission-preview-meta">
+              <div><dt>Location</dt><dd>Jezero Crater, Mars</dd></div>
+              <div><dt>Duration</dt><dd>520 days</dd></div>
+              <div><dt>Crew</dt><dd>4 astronauts</dd></div>
+            </dl>
+          </div>
+          <div class="mission-preview-card">
+            <span class="mission-preview-id">AN-092</span>
+            <span class="mission-preview-status mission-preview-status--active">Active</span>
+            <h3>Europa Clipper II</h3>
+            <p class="mission-preview-desc">Subsurface ocean analysis and plume sampling of Jupiter's moon Europa using advanced radar systems.</p>
+            <dl class="mission-preview-meta">
+              <div><dt>Location</dt><dd>Europan Orbit</dd></div>
+              <div><dt>Duration</dt><dd>Ongoing</dd></div>
+              <div><dt>Crew</dt><dd>Uncrewed</dd></div>
+            </dl>
+          </div>
+          <div class="mission-preview-card">
+            <span class="mission-preview-id">AN-095</span>
+            <span class="mission-preview-status mission-preview-status--active">Active</span>
+            <h3>Titan Explorer</h3>
+            <p class="mission-preview-desc">Methane lake probe and atmospheric chemistry analysis of Saturn's largest moon.</p>
+            <dl class="mission-preview-meta">
+              <div><dt>Location</dt><dd>Titan Orbit / Surface</dd></div>
+              <div><dt>Duration</dt><dd>Ongoing</dd></div>
+              <div><dt>Crew</dt><dd>Uncrewed</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mars Rover -->
+    <section class="section mars-rover-section">
+      <div class="container">
+        <div class="mars-rover-card">
+          <div class="mars-rover-label">NASA's Mars Exploration Program</div>
+          <h2 class="mars-rover-title">MARS ROVER</h2>
+          <p class="mars-rover-desc">
+            Exploring the Red Planet one wheel track at a time. Our robotic explorers have
+            traversed the Martian surface for over two decades, revealing a world with water
+            ice, ancient riverbeds, and the building blocks of habitable environments.
+          </p>
+          <div class="mars-rover-image">
+            <img src="images/mars-rover.jpg" alt="Mars rover navigating the rocky surface of Mars with distant mountains in the background" loading="lazy">
+          </div>
+          <a href="#missions" data-page="missions" class="btn btn-outline mars-rover-btn">Learn More <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Launch Countdown -->
+    <section class="section launch-countdown-section">
+      <div class="container">
+        <div class="launch-countdown-grid">
+          <div class="launch-countdown-info">
+            <span class="launch-countdown-label">Next Scheduled Launch</span>
+            <h2 class="launch-countdown-title">Mission AN-101 &mdash; Juno Ascendant</h2>
+            <p class="launch-countdown-desc">Jupiter Orbital Insertion with quantum communication array deployment. Launch window opens at 08:30 UTC.</p>
+            <a href="#missions" data-page="missions" class="btn btn-primary">Mission Details</a>
+          </div>
+          <div class="launch-countdown-timer">
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-days">42</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-hours">14</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-mins">22</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-secs">08</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Explore</h2>
+        </div>
+        <div class="explore-grid">
+          <a href="#missions" data-page="missions" class="explore-card">
+            <span class="explore-card-number">01</span>
+            <h3>Missions</h3>
+            <p>Overview of all active, upcoming, and completed programs including crewed and robotic operations.</p>
+          </a>
+          <a href="#science" data-page="science" class="explore-card">
+            <span class="explore-card-number">02</span>
+            <h3>Science</h3>
+            <p>Research findings, peer-reviewed publications, and the open data archive available to the scientific community.</p>
+          </a>
+          <a href="#news" data-page="news" class="explore-card">
+            <span class="explore-card-number">03</span>
+            <h3>News &amp; Media</h3>
+            <p>Press releases, launch coverage, multimedia galleries, and broadcast schedules.</p>
+          </a>
+          <a href="#about" data-page="about" class="explore-card">
+            <span class="explore-card-number">04</span>
+            <h3>About AstraNova</h3>
+            <p>Our history, organizational structure, leadership, and international partnerships.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: MISSIONS ==================== -->
+  <main class="page" id="page-missions">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>Missions</span>
+        </nav>
+        <h1 class="page-title">Missions</h1>
+        <p class="page-description">A comprehensive catalog of AstraNova's current and past space exploration programs, from lunar operations to deep space probes.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="mission-filters">
+          <button class="filter-btn filter-btn--active" data-filter="all">All Programs</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+          <button class="filter-btn" data-filter="crewed">Crewed</button>
+        </div>
+
+        <!-- Mission Table -->
+        <div class="missions-table">
+          <div class="missions-table-header">
+            <div class="col-id">ID</div>
+            <div class="col-name">Mission</div>
+            <div class="col-status">Status</div>
+            <div class="col-target">Target</div>
+            <div class="col-launch">Launch</div>
+            <div class="col-duration">Duration</div>
+          </div>
+
+          <div class="missions-table-body">
+            <div class="missions-table-row" data-status="active" data-crewed="true">
+              <span class="row-id">AN-074</span>
+              <span class="row-name">Artemis VII</span>
+              <span class="row-status row-status--active">Active</span>
+              <span class="row-target">Lunar South Pole</span>
+              <span class="row-date">Mar 12, 2025</span>
+              <span class="row-duration">730 days</span>
+            </div>
+            <div class="missions-table-row" data-status="active" data-crewed="true">
+              <span class="row-id">AN-089</span>
+              <span class="row-name">Ares Surface</span>
+              <span class="row-status row-status--active">Active</span>
+              <span class="row-target">Mars (Jezero Crater)</span>
+              <span class="row-date">Sep 3, 2025</span>
+              <span class="row-duration">520 days</span>
+            </div>
+            <div class="missions-table-row" data-status="active" data-crewed="false">
+              <span class="row-id">AN-092</span>
+              <span class="row-name">Europa Clipper II</span>
+              <span class="row-status row-status--active">Active</span>
+              <span class="row-target">Europa (Jupiter)</span>
+              <span class="row-date">Jan 15, 2025</span>
+              <span class="row-duration">Ongoing</span>
+            </div>
+            <div class="missions-table-row" data-status="active" data-crewed="false">
+              <span class="row-id">AN-095</span>
+              <span class="row-name">Titan Explorer</span>
+              <span class="row-status row-status--active">Active</span>
+              <span class="row-target">Titan (Saturn)</span>
+              <span class="row-date">Apr 8, 2025</span>
+              <span class="row-duration">Ongoing</span>
+            </div>
+            <div class="missions-table-row" data-status="upcoming" data-crewed="false">
+              <span class="row-id">AN-101</span>
+              <span class="row-name">Juno Ascendant</span>
+              <span class="row-status row-status--upcoming">Upcoming</span>
+              <span class="row-target">Jupiter Orbital Insertion</span>
+              <span class="row-date">Jul 24, 2025</span>
+              <span class="row-duration">6 months</span>
+            </div>
+            <div class="missions-table-row" data-status="upcoming" data-crewed="true">
+              <span class="row-id">AN-103</span>
+              <span class="row-name">Artemis VIII</span>
+              <span class="row-status row-status--upcoming">Upcoming</span>
+              <span class="row-target">Lunar Gateway</span>
+              <span class="row-date">Oct 2025</span>
+              <span class="row-duration">TBD</span>
+            </div>
+            <div class="missions-table-row" data-status="completed" data-crewed="false">
+              <span class="row-id">AN-067</span>
+              <span class="row-name">Mars Pathfinder III</span>
+              <span class="row-status row-status--completed">Completed</span>
+              <span class="row-target">Mars (Olympus Mons)</span>
+              <span class="row-date">Jun 18, 2024</span>
+              <span class="row-duration">365 days</span>
+            </div>
+            <div class="missions-table-row" data-status="completed" data-crewed="false">
+              <span class="row-id">AN-063</span>
+              <span class="row-name">Cassini-II</span>
+              <span class="row-status row-status--completed">Completed</span>
+              <span class="row-target">Saturn Ring System</span>
+              <span class="row-date">Nov 2, 2024</span>
+              <span class="row-duration">180 days</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Registry -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Fleet Registry</h2>
+          <p class="section-desc">Active spacecraft currently deployed across the solar system.</p>
+        </div>
+        <div class="fleet-grid">
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">01</span>
+              <h3>Odyssey</h3>
+            </div>
+            <p class="fleet-card-type">Deep Space Probe &mdash; RTG Powered</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>725 kg</dd></div>
+              <div><dt>Range</dt><dd>42 AU</dd></div>
+              <div><dt>Status</dt><dd class="status-nominal">Nominal</dd></div>
+            </dl>
+          </div>
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">02</span>
+              <h3>Peregrine</h3>
+            </div>
+            <p class="fleet-card-type">Lunar Orbital Station &mdash; Crewed</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>420 tonnes</dd></div>
+              <div><dt>Orbit</dt><dd>Near-Rectilinear Halo</dd></div>
+              <div><dt>Capacity</dt><dd>8 crew</dd></div>
+            </dl>
+          </div>
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">03</span>
+              <h3>Vanguard</h3>
+            </div>
+            <p class="fleet-card-type">Mars Surface Lander &mdash; Solar Powered</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>120 kg</dd></div>
+              <div><dt>Location</dt><dd>Jezero Crater</dd></div>
+              <div><dt>Status</dt><dd class="status-nominal">Active</dd></div>
+            </dl>
+          </div>
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">04</span>
+              <h3>Horizon</h3>
+            </div>
+            <p class="fleet-card-type">Jupiter Orbiter &mdash; Solar Array</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>380 kg</dd></div>
+              <div><dt>Range</dt><dd>5.2 AU</dd></div>
+              <div><dt>Status</dt><dd class="status-nominal">Active</dd></div>
+            </dl>
+          </div>
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">05</span>
+              <h3>Sentinel</h3>
+            </div>
+            <p class="fleet-card-type">Near-Earth Observatory &mdash; Solar Array</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>210 kg</dd></div>
+              <div><dt>Orbit</dt><dd>L1 Halo</dd></div>
+              <div><dt>Status</dt><dd class="status-nominal">Surveillance</dd></div>
+            </dl>
+          </div>
+          <div class="fleet-card">
+            <div class="fleet-card-header">
+              <span class="fleet-card-id">06</span>
+              <h3>Atlas</h3>
+            </div>
+            <p class="fleet-card-type">Transport Vehicle &mdash; Nuclear Thermal</p>
+            <dl class="fleet-card-specs">
+              <div><dt>Mass</dt><dd>12 tonnes</dd></div>
+              <div><dt>Propulsion</dt><dd>NT-4 Reactor</dd></div>
+              <div><dt>Crew</dt><dd>6</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: SCIENCE ==================== -->
+  <main class="page" id="page-science">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>Science</span>
+        </nav>
+        <h1 class="page-title">Science &amp; Research</h1>
+        <p class="page-description">Scientific discoveries and research findings from AstraNova's fleet of robotic and crewed missions across the solar system and beyond.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Featured Discovery -->
+        <div class="featured-discovery">
+          <div class="featured-discovery-image">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=500&fit=crop&q=80" alt="Nebula showing gas and dust clouds where new stars are forming">
+          </div>
+          <div class="featured-discovery-content">
+            <span class="featured-discovery-tag">Exoplanet Research</span>
+            <span class="featured-discovery-date">April 28, 2025 &mdash; Published in Nature Astronomy</span>
+            <h2 class="featured-discovery-title">Biosignature Detection in TRAPPIST-1e Atmosphere</h2>
+            <p class="featured-discovery-abstract">
+              Spectroscopic analysis of the TRAPPIST-1e exoplanet atmosphere reveals water vapor signatures
+              at 3.5&sigma; confidence and methane detection at 2.8&sigma;, consistent with potential
+              biological or geological production. This represents the most compelling biosignature candidate
+              detected to date outside the Solar System.
+            </p>
+            <div class="featured-discovery-meta">
+              <div><span class="meta-label">Lead Investigator</span><span>Dr. Elena Vasquez, Exoplanet Science Division</span></div>
+              <div><span class="meta-label">Instrument</span><span>High-Resolution Spectrograph (HRS-4)</span></div>
+              <div><span class="meta-label">Data Archive</span><span><a href="#">STScI-GTO-2025-0847</a></span></div>
+            </div>
+            <a href="#" class="btn btn-outline">Download Full Paper</a>
+          </div>
+        </div>
+
+        <!-- Discoveries List -->
+        <div class="section-header" style="margin-top:var(--space-4xl);">
+          <h2 class="section-title">Recent Publications</h2>
+        </div>
+
+        <div class="publications-list">
+          <article class="publication">
+            <div class="publication-meta">
+              <span class="publication-category">Planetary Science</span>
+              <span class="publication-date">April 25, 2025</span>
+            </div>
+            <h3 class="publication-title">Subsurface Water Ice Confirmed at Mars Mid-Latitude Deposits via Ground-Penetrating Radar</h3>
+            <p class="publication-excerpt">Vanguard rover data reveals extensive ice-rich deposits beneath the regolith at Jezero Crater, with ice content estimated at 30-50% by volume within the upper 2 meters.</p>
+            <div class="publication-footer">
+              <span class="publication-journal">Icarus, Vol. 448</span>
+              <a href="#">View Record <span>&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="publication-meta">
+              <span class="publication-category">Gravitational Physics</span>
+              <span class="publication-date">March 14, 2025</span>
+            </div>
+            <h3 class="publication-title">Multi-Messenger Detection of Binary Neutron Star Merger Event GW-20250314</h3>
+            <p class="publication-excerpt">Coordinated detection across gravitational wave and electromagnetic observatories provides first simultaneous measurement of kilonova light curves and r-process nucleosynthesis yields.</p>
+            <div class="publication-footer">
+              <span class="publication-journal">Physical Review Letters</span>
+              <a href="#">View Record <span>&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="publication-meta">
+              <span class="publication-category">Atmospheric Science</span>
+              <span class="publication-date">February 22, 2025</span>
+            </div>
+            <h3 class="publication-title">Real-Time Modeling of Titan's Methane Hydrological Cycle from Cassini-II Data</h3>
+            <p class="publication-excerpt">Cassini-II observations enable the first complete model of Titan's methane cycle, documenting evaporation, cloud formation, and precipitation patterns across multiple latitudinal zones.</p>
+            <div class="publication-footer">
+              <span class="publication-journal">Journal of Geophysical Research</span>
+              <a href="#">View Record <span>&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="publication-meta">
+              <span class="publication-category">Cosmology</span>
+              <span class="publication-date">January 8, 2025</span>
+            </div>
+            <h3 class="publication-title">Large-Scale Dark Energy Distribution Map from Supernova Type Ia Survey</h3>
+            <p class="publication-excerpt">Analysis of 14,829 Type Ia supernovae across 2.1 billion light-years produces the most detailed map of dark energy distribution to date, constraining the equation of state parameter w to w = -1.03 &plusmn; 0.02.</p>
+            <div class="publication-footer">
+              <span class="publication-journal">The Astrophysical Journal</span>
+              <a href="#">View Record <span>&rarr;</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="data-portal-section">
+          <h3 class="data-portal-title">Open Data Portal</h3>
+          <p class="data-portal-desc">All raw and processed mission data is available to the scientific community through our open data archive.</p>
+          <div class="data-portal-stats">
+            <div class="data-stat">
+              <span class="data-stat-value">2.4 PB</span>
+              <span class="data-stat-label">Data Archive</span>
+            </div>
+            <div class="data-stat">
+              <span class="data-stat-value">1,847</span>
+              <span class="data-stat-label">Publications</span>
+            </div>
+            <div class="data-stat">
+              <span class="data-stat-value">340+</span>
+              <span class="data-stat-label">Institutions</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-outline">Access Data Portal</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: NEWS ==================== -->
+  <main class="page" id="page-news">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>News &amp; Media</span>
+        </nav>
+        <h1 class="page-title">News &amp; Media</h1>
+        <p class="page-description">Official press releases, launch coverage, and multimedia resources from AstraNova Space Administration.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="news-archive">
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">28</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Mars Exploration</span>
+              <h3 class="news-archive-title"><a href="#">Vanguard Rover Confirms Subsurface Ice Deposits at Jezero Crater</a></h3>
+              <p class="news-archive-excerpt">Ground-penetrating radar data reveals extensive subsurface water ice deposits accessible for in-situ resource utilization operations.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Full Report (PDF)</a>
+                <a href="#">Image Gallery</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">25</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Europa Clipper II</span>
+              <h3 class="news-archive-title"><a href="#">Europa Clipper II Completes First Deep Flyby of Conamara Chaos Region</a></h3>
+              <p class="news-archive-excerpt">High-resolution imaging and magnetic field measurements reveal subsurface structure consistent with active cryovolcanism.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Imaging Data</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">22</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Partnerships</span>
+              <h3 class="news-archive-title"><a href="#">AstraNova Signs Partnership Agreement with Three Additional Space Agencies</a></h3>
+              <p class="news-archive-excerpt">New agreements expand international cooperation for the Artemis Lunar Base program and the upcoming Mars Sample Return mission.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Agreement Text (PDF)</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">18</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Propulsion</span>
+              <h3 class="news-archive-title"><a href="#">Atlas Transport Vehicle Completes Successful Nuclear Thermal Propulsion Test</a></h3>
+              <p class="news-archive-excerpt">The NT-4 reactor achieved full nominal power output during 72-hour continuous operation test at the Nevada Test Site.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Technical Brief (PDF)</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">14</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Exoplanet Science</span>
+              <h3 class="news-archive-title"><a href="#">New Detection Method Achieves 99.7% Accuracy in Radial Velocity Analysis</a></h3>
+              <p class="news-archive-excerpt">Machine learning-enhanced spectrograph calibration reduces stellar activity noise to unprecedented levels.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Research Paper</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-archive-item">
+            <div class="news-archive-date">
+              <span class="news-archive-day">10</span>
+              <span class="news-archive-month">APR</span>
+              <span class="news-archive-year">2025</span>
+            </div>
+            <div class="news-archive-content">
+              <span class="news-archive-category">Lunar Operations</span>
+              <h3 class="news-archive-title"><a href="#">Station Peregrine Reports Successful Completion of Habitat Module Expansion</a></h3>
+              <p class="news-archive-excerpt">The second habitat module has been successfully berthed, increasing crew living space by 40% and extending maximum crew rotation capacity.</p>
+              <div class="news-archive-links">
+                <a href="#">Press Release</a>
+                <a href="#">Video (12:45)</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: ABOUT ==================== -->
+  <main class="page" id="page-about">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>About</span>
+        </nav>
+        <h1 class="page-title">About AstraNova</h1>
+        <p class="page-description">The United Interstellar Coalition's civilian space agency, dedicated to the peaceful exploration of space and the advancement of human knowledge.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="about-heading">Our Mission</h2>
+            <p>
+              The AstraNova Space Administration is responsible for the civilian space program of the
+              United Interstellar Coalition. Founded in 2024, AstraNova carries forward the legacy of
+              previous space programs while charting a new course for deep space exploration and the
+              sustainable expansion of human presence beyond Earth.
+            </p>
+            <p>
+              Our mission is threefold: to expand human knowledge of the solar system and beyond,
+              to develop the technologies and infrastructure required for long-duration space operations,
+              and to foster international cooperation in the peaceful uses of outer space.
+            </p>
+            <p>
+              With research centers on three continents, a fleet of six active spacecraft, and
+              partnerships with 42 space agencies worldwide, AstraNova operates at the frontier of
+              human scientific endeavor.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&h=400&fit=crop&q=80" alt="Space station module interior showing Earth through a viewport">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Organizational Pillars</h2>
+        </div>
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <span class="pillar-card-number">01</span>
+            <h3>Discovery</h3>
+            <p>Advancing human understanding of the cosmos through robotic and crewed exploration of the solar system and beyond. Our missions address fundamental questions about the origins and evolution of planetary systems.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-card-number">02</span>
+            <h3>Innovation</h3>
+            <p>Developing breakthrough propulsion systems, life support technologies, and scientific instruments that enable access to previously unreachable destinations. Our technology development office funds over 200 active programs.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-card-number">03</span>
+            <h3>Collaboration</h3>
+            <p>Uniting 42 space agencies and hundreds of research institutions in pursuit of shared scientific objectives. International cooperation is the foundation of all major AstraNova programs.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-card-number">04</span>
+            <h3>Open Science</h3>
+            <p>Committed to making all mission data and research findings freely available to the global scientific community. Our data archive of 2.4 petabytes serves over 340 institutions worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Leadership</h2>
+        </div>
+        <div class="leadership-grid">
+          <div class="leadership-card">
+            <div class="leadership-avatar">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&q=80" alt="Portrait of Administrator Marcus Chen">
+            </div>
+            <h4>Marcus Chen</h4>
+            <p class="leadership-role">Administrator</p>
+          </div>
+          <div class="leadership-card">
+            <div class="leadership-avatar">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&q=80" alt="Portrait of Deputy Administrator Sarah Okonkwo">
+            </div>
+            <h4>Sarah Okonkwo</h4>
+            <p class="leadership-role">Deputy Administrator</p>
+          </div>
+          <div class="leadership-card">
+            <div class="leadership-avatar">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80" alt="Portrait of Chief Scientist Dr. Hiroshi Tanaka">
+            </div>
+            <h4>Dr. Hiroshi Tanaka</h4>
+            <p class="leadership-role">Chief Scientist</p>
+          </div>
+          <div class="leadership-card">
+            <div class="leadership-avatar">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&q=80" alt="Portrait of Chief of Operations Amara Diallo">
+            </div>
+            <h4>Amara Diallo</h4>
+            <p class="leadership-role">Chief of Operations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: CONTACT ==================== -->
+  <main class="page" id="page-contact">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>Contact</span>
+        </nav>
+        <h1 class="page-title">Contact</h1>
+        <p class="page-description">Contact information for AstraNova's headquarters and division offices.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="contact-heading">Headquarters</h2>
+            <address>
+              <p><strong>AstraNova Space Administration</strong></p>
+              <p>100 Orbital Drive</p>
+              <p>Houston, TX 77058</p>
+              <p>United States</p>
+            </address>
+
+            <div class="contact-directory">
+              <div class="contact-dir-item">
+                <span class="contact-dir-label">Press Inquiries</span>
+                <a href="mailto:press@astranova.gov">press@astranova.gov</a>
+              </div>
+              <div class="contact-dir-item">
+                <span class="contact-dir-label">Research Partnerships</span>
+                <a href="mailto:partnerships@astranova.gov">partnerships@astranova.gov</a>
+              </div>
+              <div class="contact-dir-item">
+                <span class="contact-dir-label">Public Affairs</span>
+                <a href="mailto:publicaffairs@astranova.gov">publicaffairs@astranova.gov</a>
+              </div>
+              <div class="contact-dir-item">
+                <span class="contact-dir-label">Careers</span>
+                <a href="mailto:careers@astranova.gov">careers@astranova.gov</a>
+              </div>
+              <div class="contact-dir-item">
+                <span class="contact-dir-label">General</span>
+                <a href="mailto:info@astranova.gov">info@astranova.gov</a>
+              </div>
+            </div>
+
+            <div class="contact-offices">
+              <h3>Regional Offices</h3>
+              <div class="office">
+                <strong>European Center</strong>
+                <p>Oberpfaffenhofen, 82234 Wehling, Germany</p>
+              </div>
+              <div class="office">
+                <strong>Pacific Center</strong>
+                <p>Tsukuba Space Center, 305-8505 Tsukuba, Ibaraki, Japan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <h2 class="contact-heading">Send a Message</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="Dr. Jane Cooper">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required placeholder="jane@university.edu">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="organization">Organization</label>
+                <input type="text" id="organization" name="organization" placeholder="University / Company / Agency">
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a topic</option>
+                  <option value="research">Research Collaboration</option>
+                  <option value="media">Media Inquiry</option>
+                  <option value="data">Data Access</option>
+                  <option value="careers">Career Opportunities</option>
+                  <option value="education">Educational Programs</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Please describe your inquiry..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#home" data-page="home" class="site-logo site-logo--footer">
+            <svg class="site-logo-mark" width="28" height="28" viewBox="0 0 36 36" fill="none">
+              <rect x="1" y="1" width="34" height="34" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="18" r="2" fill="currentColor"/>
+            </svg>
+            <div class="site-logo-text">
+              <span class="site-logo-name">AstraNova</span>
+              <span class="site-logo-sub">Space Administration</span>
+            </div>
+          </a>
+          <p class="footer-tagline">Advancing human knowledge through deep space exploration since 2024.</p>
+        </div>
+
+        <nav class="footer-nav">
+          <div class="footer-nav-col">
+            <h5>Operations</h5>
+            <a href="#missions" data-page="missions">Active Missions</a>
+            <a href="#missions" data-page="missions">Fleet Registry</a>
+            <a href="#news" data-page="news">Launch Schedule</a>
+            <a href="#news" data-page="news">Launch Gallery</a>
+          </div>
+          <div class="footer-nav-col">
+            <h5>Science</h5>
+            <a href="#science" data-page="science">Discoveries</a>
+            <a href="#science" data-page="science">Publications</a>
+            <a href="#science" data-page="science">Data Archive</a>
+            <a href="#science" data-page="science">Instrumentation</a>
+          </div>
+          <div class="footer-nav-col">
+            <h5>Organization</h5>
+            <a href="#about" data-page="about">History</a>
+            <a href="#about" data-page="about">Leadership</a>
+            <a href="#about" data-page="about">Centers</a>
+            <a href="#contact" data-page="contact">Contact</a>
+          </div>
+          <div class="footer-nav-col">
+            <h5>Resources</h5>
+            <a href="#news" data-page="news">Press Room</a>
+            <a href="#contact" data-page="contact">Careers</a>
+            <a href="#science" data-page="science">Education</a>
+            <a href="#">API Documentation</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 AstraNova Space Administration. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+          <a href="#">FOIA</a>
+          <a href="#">No FEAR Act</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
